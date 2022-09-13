@@ -1,0 +1,63 @@
+<body>
+
+
+    <div class="container">
+
+<table  class="table table-striped table-bordered">
+    <thead>
+        <tr>
+        <th>University Name</th>
+        <th>Name</th>
+        <th>Identifier</th>
+        <th>CIN</th>
+        <th>Email</th>
+        <th>Class</th>
+        <th>Details</th>
+        <th>Contrat</th>
+        <th>Notification</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr  *ngFor="let item of admis | paginate :{id:'listing_pagination',
+        itemsPerPage:9,
+        currentPage:page}">
+
+
+            <td><span>{{item.university.name}}</span></td>
+
+            <td><span>{{item.student.firstName}} {{item.student.lastName}}</span></td>
+ 
+            <td><span>{{item.student.identifier}}</span></td>
+
+            <td><span>{{item.student.cin}}</span></td>
+
+            <td><span>{{item.student.email}}</span></td>
+
+            <td><span>{{item.student.studentClass}}</span></td>
+              
+    
+            <td><button  mat-raised-button color="primary"  routerLink="/MoveOnEsprit/admis/{{item.id}}">Details</button></td>
+
+            <td><button  mat-raised-button color="primary"  routerLink="/MoveOnEsprit/contrat/{{item.id}}">Contrat</button></td>
+
+            <td><button  mat-raised-button color="primary"  routerLink="/MoveOnEsprit/send/notification/{{item.id}}">Notification</button></td>
+
+        </tr>
+       
+    </tbody>
+</table>
+
+<div class="pagination_container">
+
+<pagination-controls id ='listing_pagination' (pageChange)="page = $event" ></pagination-controls>
+
+</div>
+
+
+</div>
+
+
+
+</body>
+

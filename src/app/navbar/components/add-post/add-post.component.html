@@ -1,0 +1,40 @@
+<body>
+
+    <mat-card>
+    
+        <mat-card-content >
+      
+          <h1>Add Post</h1>
+        
+        <form [formGroup]="postForm" (ngSubmit)="addPost()">
+
+        
+          <mat-form-field appearance="outline">
+      
+      
+            <mat-label>Description</mat-label>
+        
+            <textarea matInput name="description" placeholder="Description" formControlName="description"></textarea>
+        
+
+          </mat-form-field>  
+         
+
+         <input type="file"  name="file" (change)="getFile($event)"/>
+        
+    
+        <button mat-raised-button color="primary" type="submit" >Add</button>
+        
+    
+        </form>
+        
+        </mat-card-content>
+
+      </mat-card>
+      
+
+
+</body>
+
+
+

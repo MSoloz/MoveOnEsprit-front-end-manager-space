@@ -1,0 +1,93 @@
+<body>
+
+    <mat-card >
+    
+        <mat-card-content >
+      
+          <h1>Add University</h1>
+        
+        <form [formGroup]="universityForm" (ngSubmit)="addUniversity()" >
+        
+          <mat-form-field appearance="outline">
+      
+      
+            <mat-label>Name</mat-label>
+        
+             <input matInput  placeholder="Name"   formControlName="name">
+        
+
+          </mat-form-field>  
+        
+          <mat-form-field appearance="outline">
+        
+            <mat-label>Country</mat-label>
+      
+            <input matInput placeholder="Country" formControlName="country" >
+        
+            
+         </mat-form-field> 
+
+         <mat-form-field appearance="outline">
+        
+            <mat-label>Address</mat-label>
+      
+            <input matInput placeholder="Address" formControlName="address" >
+        
+            
+         </mat-form-field> 
+
+         <mat-form-field appearance="outline">
+        
+            <mat-label>Description</mat-label>
+      
+            <textarea matInput name ="description" placeholder="Description" formControlName="description" ></textarea>
+        
+            
+         </mat-form-field> 
+
+         <mat-form-field appearance="outline">
+        
+            <mat-label>Start Date</mat-label>
+      
+            <input matInput placeholder="Start Date" formControlName="startDate"  [matDatepicker]="picker1">
+        
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+
+            <mat-datepicker #picker1></mat-datepicker>
+            
+         </mat-form-field> 
+
+         <mat-form-field appearance="outline">
+        
+            <mat-label>End Date</mat-label>
+      
+            <input matInput placeholder="End Date" formControlName="endDate"  [matDatepicker]="picker2">
+        
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            
+            <mat-datepicker #picker2></mat-datepicker>
+            
+         </mat-form-field> 
+
+         <input type="file"  name="file" (change)="getFile($event)"/>
+
+        
+        <button mat-raised-button color="primary" type="submit" >Add</button>
+        
+     
+        
+        </form>
+        
+        </mat-card-content>
+      </mat-card>
+      
+
+
+
+
+
+
+
+
+
+</body>

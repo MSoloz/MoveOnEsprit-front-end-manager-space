@@ -1,0 +1,49 @@
+body{
+
+    margin: 0;
+
+}
+
+.container1{
+
+
+    margin-top: 25px;
+
+    margin-left: 100px;
+
+    margin-right: 100px;
+
+
+}
+
+.container{
+
+
+    margin: 25px;
+
+
+    margin-left: 25px;
+
+
+    margin-right: 25px;
+
+}
+
+.ok{
+
+
+    margin: 0;
+
+}
+
+.pagination_container{
+
+
+display: flex;
+
+justify-content: center;
+
+margin-top: 20px;
+
+
+}

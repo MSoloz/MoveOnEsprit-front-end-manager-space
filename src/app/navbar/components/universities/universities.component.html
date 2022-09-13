@@ -1,0 +1,70 @@
+<body>
+
+
+    <div class="container1">
+
+
+        <button mat-raised-button color="primary" class="add-button"  (click)="navigate()">Add</button>
+
+
+    </div>
+
+    <div class="container">
+
+<table  class="table table-striped table-bordered ok">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Address</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Details</th>
+        <th>Update</th>
+        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr  *ngFor="let university of universities | paginate :{id:'listing_pagination',
+        itemsPerPage:7,
+        currentPage:page}">
+
+
+            <td><span>{{university.name}}</span></td>
+        
+            <td><span>{{university.country}}</span></td>
+              
+            <td><span>{{university.address}}</span></td>
+
+            <td><span>{{university.startDate}}</span></td>
+
+            <td><span>{{university.endDate}}</span></td>
+
+            <td><button  mat-raised-button color="primary"  routerLink="/MoveOnEsprit/university/details/{{university.id}}">Details</button></td>
+
+            <td><button  mat-raised-button color="primary"  routerLink="/MoveOnEsprit/editUniversity/{{university.id}}">Edit</button></td>
+
+            <td><button mat-raised-button color="primary" (click)="removeUniversity(university.id)">Delete</button></td>
+           
+
+
+
+
+        </tr>
+       
+    </tbody>
+</table>
+
+<div class="pagination_container">
+
+<pagination-controls id ='listing_pagination' (pageChange)="page = $event" ></pagination-controls>
+
+</div>
+
+
+</div>
+
+
+
+</body>

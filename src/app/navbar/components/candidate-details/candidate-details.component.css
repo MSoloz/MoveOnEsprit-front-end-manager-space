@@ -1,0 +1,35 @@
+body{
+
+    margin: 0;
+  
+    height: 200vh;
+  
+    
+  
+  
+  }
+  
+  .container{
+  
+    margin-top: 50px;
+  
+  }
+  
+  
+  .img-responsive{
+  
+  
+    height: 570px;
+  
+    width: 460px;
+  
+  
+  }
+  
+  
+  .ok{
+  
+  
+  margin-top: 50px;
+  
+  }

@@ -1,0 +1,55 @@
+<body>
+
+  <button mat-raised-button color="primary" routerLink="/MoveOnEsprit/addPost">Add</button>
+
+    <div class="home_body">
+  
+      <mat-card *ngFor="let p of posts" class="post_card">
+
+          <mat-card-header class="card_header">
+        
+              <img alt="" mat-card-avatar src="{{apiServerUrl}}/img/{{p.creator.image}}">
+  
+            <mat-card-title>{{p.creator.lastName}} {{p.creator.firstName}}</mat-card-title>
+
+            <mat-card-subtitle>{{p.creator.email}}</mat-card-subtitle>
+
+            
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="menu-button">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item  routerLink="/MoveOnEsprit/editPost/{{p.id}}">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item  (click)="deletePost(p.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+
+
+          </mat-card-header>
+
+          <img mat-card-image src="{{apiServerUrl}}/img/{{p.image}}" alt="Photo of a Shiba Inu">
+
+          <mat-card-content>
+
+            <p>
+             {{p.description}}
+            </p>
+          </mat-card-content>
+
+          <mat-card-actions>
+
+            <button mat-button>Show</button>
+            
+          </mat-card-actions>
+        </mat-card>
+  
+  
+  </div>
+  
+  
+  </body>

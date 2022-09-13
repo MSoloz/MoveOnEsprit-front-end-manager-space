@@ -1,0 +1,75 @@
+<div class="login-container">
+
+    <header class="login-header">
+    
+    
+    
+    <div class="login-header-left">
+    
+    
+      <img alt="logo" src="assets/esprit.png">
+      
+      <h2>MoveOnEsprit helps you find and move to another universities</h2>
+      
+    
+    </div>
+    
+    <div class="login-header-right">
+    
+    <mat-card class ="form-container">
+    
+      <mat-card-content >
+    
+        <h1>Login</h1>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+      
+        <mat-form-field appearance="outline">
+    
+    
+          <mat-label>Email</mat-label>
+      
+           <input matInput  placeholder="Email"   formControlName="email">
+
+          <mat-error>Email is required</mat-error>
+    
+        </mat-form-field>  
+      
+      
+        <mat-form-field appearance="outline">
+      
+          <mat-label>Password</mat-label>
+    
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" >
+      
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+          </button>
+      
+
+          <mat-error>Password is required</mat-error>
+
+       </mat-form-field> 
+      
+      
+     
+      
+      <button mat-raised-button color="primary" type="submit" >login</button>
+      
+    
+      
+      </form>
+      
+      </mat-card-content>
+      
+    </mat-card>
+    
+      </div>
+    
+    
+      </header>
+    
+      </div>
+      
