@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Notification } from 'src/app/interfaces/notification';
 import { CandidateService } from 'src/app/services/candidate.service';
 import { NotificationService } from 'src/app/services/notification.service';
 
@@ -46,10 +45,9 @@ export class SendNotificationComponent implements OnInit {
 
     console.log(this.notificationForm.get('message')!.value);
 
-    var value = new notif(this.notificationForm.get('message')!.value,this.userId,this.candidate.student.id);
+    var notification = new Notification(this.notificationForm.get('message')!.value,this.userId,this.candidate.student.id);
 
-  
-    this.notificationService.createNotification(value).subscribe( res => {
+    this.notificationService.createNotification(notification).subscribe( res => {
 
       if(res!=null){
 
@@ -66,7 +64,7 @@ export class SendNotificationComponent implements OnInit {
 
 }
 
-class notif {
+class Notification {
 
   message!: string;
 
