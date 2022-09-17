@@ -13,19 +13,19 @@ export class CandidateService {
 
   constructor(private http:HttpClient) { }
 
-  getCondidats(){
+  getAllCondidats(){
 
     return this.http.get(`${this.apiServerUrl}/candidate/all`);
  
    }
 
-   getAdmis(){
+   getAllAdmis(){
 
     return this.http.get(`${this.apiServerUrl}/candidate/admis`);
  
    }
  
-   getCandidate(id: any){
+   getCandidateById(id: any){
  
      return this.http.get(`${this.apiServerUrl}/candidate/details/`+id);
  

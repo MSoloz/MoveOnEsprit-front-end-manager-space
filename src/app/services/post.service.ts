@@ -11,7 +11,7 @@ export class PostService {
 
   constructor(private http:HttpClient) {  }
 
-  getPosts() { 
+  getAllPosts() { 
 
     return this.http.get(`${this.apiServerUrl}/post/all`);
   
@@ -38,7 +38,7 @@ export class PostService {
   
  }  
 
- deletePost(id:any){
+ deletePostById(id:any){
 
   return this.http.delete(`${this.apiServerUrl}/post/delete/`+id);
   

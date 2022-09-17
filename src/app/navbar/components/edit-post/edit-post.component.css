@@ -18,11 +18,9 @@ mat-card{
  
  form{
  
- 
-     display: flex;
+    display: flex;
  
      flex-direction: column;
- 
 
  }
 

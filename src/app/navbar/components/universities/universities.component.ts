@@ -18,29 +18,19 @@ export class UniversitiesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
-
-    this.universityService.getUniversities().subscribe( res =>{
-
-      this.universities = res;
-   
-       });
+    this.universityService.getAllUniversities().subscribe( res => this.universities = res );
 
   }
 
    navigate(){
+
      this.router.navigate(['/MoveOnEsprit/addUniversity'])
    }
 
 
    removeUniversity(id:string){
 
-    this.universityService.deleteUniversity(id).subscribe(res=>{
-
-      this.ngOnInit();
-
-
-    })
+    this.universityService.deleteUniversityById(id).subscribe( res => this.ngOnInit());
 
    }
 

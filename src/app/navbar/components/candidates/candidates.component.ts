@@ -16,7 +16,7 @@ export class CandidatesComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.candidateService.getCondidats().subscribe( res=>{  this.candidates = res; });
+  this.candidateService.getAllCondidats().subscribe( res=> this.candidates = res);
 
   }
 

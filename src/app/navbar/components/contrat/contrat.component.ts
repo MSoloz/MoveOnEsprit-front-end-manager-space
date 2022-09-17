@@ -29,7 +29,7 @@ export class ContratComponent implements OnInit {
 
   this.route.paramMap.subscribe(params => {  this.id = params.get('id'); });
  
-  this.candidateService.getCandidate(this.id).subscribe( res =>  this.candidate = res );  
+  this.candidateService.getCandidateById(this.id).subscribe( res =>  this.candidate = res );  
 
 
   }
@@ -51,7 +51,6 @@ export class ContratComponent implements OnInit {
 
 
 
-   
 
   }
 

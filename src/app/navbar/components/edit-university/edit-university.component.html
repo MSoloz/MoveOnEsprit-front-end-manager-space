@@ -1,12 +1,12 @@
 <body>
 
-    <mat-card class ="form-container">
+    <mat-card>
     
         <mat-card-content >
       
           <h1>Edit University</h1>
         
-        <form [formGroup]="universityForm" (ngSubmit)="editUniversity()" class="okk">
+        <form [formGroup]="universityForm" (ngSubmit)="editUniversity()">
 
         
           <mat-form-field appearance="outline">
@@ -77,16 +77,10 @@
 
          <input type="file"  name="file" (change)="getFile($event)"/>
         
-
-   
-        <div class="center margin-top">
         
         <button mat-raised-button color="primary" type="submit" >Edit</button>
         
-        </div>
-
       
-        
         </form>
         
         </mat-card-content>

@@ -49,8 +49,6 @@ export class LoginComponent implements OnInit {
 
         if(res!=null){
 
-
-
           this.user = res;
 
           localStorage.setItem('userId',this.user.id);

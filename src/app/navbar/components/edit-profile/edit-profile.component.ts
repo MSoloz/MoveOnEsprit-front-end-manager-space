@@ -20,6 +20,8 @@ export class EditProfileComponent implements OnInit {
 
   editData : any;
 
+  hide = true;
+
 
   constructor(private router:Router,private managerService:ManagerService) { }
 
@@ -29,6 +31,7 @@ export class EditProfileComponent implements OnInit {
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
+      password: new FormControl(''),
       phone: new FormControl(''),
       description: new FormControl(''),
       file: new FormControl(''),
@@ -48,6 +51,7 @@ export class EditProfileComponent implements OnInit {
         this.profileForm.controls['firstName'].setValue(this.editData.firstName);
         this.profileForm.controls['lastName'].setValue(this.editData.lastName);
         this.profileForm.controls['email'].setValue(this.editData.email);
+        this.profileForm.controls['password'].setValue(this.editData.password);
         this.profileForm.controls['phone'].setValue(this.editData.phone);
         this.profileForm.controls['description'].setValue(this.editData.description);
     
@@ -59,9 +63,6 @@ export class EditProfileComponent implements OnInit {
 
   }
 
-
-
-  
   editProfile(){
 
     console.log(this.profileForm.value);
@@ -72,15 +73,15 @@ export class EditProfileComponent implements OnInit {
     formData.append('lastName',this.profileForm.get('lastName')?.value);
     formData.append('file',this.profileForm.get('file')?.value);
     formData.append('email',this.profileForm.get('email')?.value);
+    formData.append('password',this.profileForm.get('password')?.value);
     formData.append('phone',this.profileForm.get('phone')?.value);
     formData.append('description',this.profileForm.get('description')?.value);
-
 
     this.managerService.updateManagerById(this.id,formData).subscribe(res =>{
 
       if(res !=null){
 
-        this.router.navigate(['/MoveOnEsprit/universities']);
+        this.router.navigate(['/MoveOnEsprit/profile']);
 
 
       }else {

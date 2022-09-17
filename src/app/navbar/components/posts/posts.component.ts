@@ -20,35 +20,17 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.postService.getPosts().subscribe(res =>{
-
-      this.posts = res;
-
-      console.log(res);
-
-    });
+    this.postService.getAllPosts().subscribe(res => this.posts = res );
 
   }
-
-
 
   deletePost(id: string) {  
 
-
-    this.postService.deletePost(id).subscribe(res=>{
-
-      this.ngOnInit();
-      
-     });
+    this.postService.deletePostById(id).subscribe( res => this.ngOnInit() );
 
 
   }
 
 
-  navigate(){
-
-    this.router.navigate([]);
-
-  }
 
 }

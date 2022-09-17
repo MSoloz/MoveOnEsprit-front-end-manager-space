@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Notification } from 'src/app/interfaces/notification';
+import { CandidateService } from 'src/app/services/candidate.service';
 import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
@@ -15,11 +16,13 @@ export class SendNotificationComponent implements OnInit {
 
   id:any;
 
+  candidate : any;
+
   notification!: Notification;
   
-   notificationForm !:FormGroup;
+  notificationForm !:FormGroup;
 
-  constructor(private route:ActivatedRoute,private router:Router,private notificationService:NotificationService) { }
+  constructor(private route:ActivatedRoute,private router:Router,private notificationService:NotificationService,private candidateService:CandidateService) { }
 
   ngOnInit(): void {
 
@@ -28,35 +31,53 @@ export class SendNotificationComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {  this.id = params.get('id'); });
 
+    this.candidateService.getCandidateById(this.id).subscribe( res =>  this.candidate = res );
+
     this.notificationForm = new FormGroup({ 
 
       message : new FormControl(''),
 
-      senderId:this.userId,
-
-      receiverId :this.id
-
+  
        });
   }
 
 
   sendNotification(){ 
 
-   /* this.notification.message = this.notificationForm.get('message')!.value;
+    console.log(this.notificationForm.get('message')!.value);
 
-    this.notification.senderId = this.userId;
+    var value = new notif(this.notificationForm.get('message')!.value,this.userId,this.candidate.student.id);
 
-    this.notification.receiverId = this.id;
+  
+    this.notificationService.createNotification(value).subscribe( res => {
 
-    console.log(this.notification);*/
+      if(res!=null){
 
-
-    this.notificationService.createNotification(this.notification).subscribe( res => {
+      this.router.navigate(['MoveOnEsprit/candidates']);
 
       console.log(res);
 
+      }
+
    },err=> {console.log(err);});
 
+  }
+
+
+}
+
+class notif {
+
+  message!: string;
+
+  senderId!: string;
+
+  receiverId!: string;
+
+  public constructor(message: string,senderId: string,receiverId: string) {
+    this.message = message;
+    this.senderId = senderId;
+    this.receiverId = receiverId;
   }
 
 

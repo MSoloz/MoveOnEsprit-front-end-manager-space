@@ -26,7 +26,7 @@ export class AdmisDetailsComponent implements OnInit {
 
   console.log(this.id);
 
-  this.candidateService.getCandidate(this.id).subscribe( res => { 
+  this.candidateService.getCandidateById(this.id).subscribe( res => { 
     
     this.candidate = res ;
 

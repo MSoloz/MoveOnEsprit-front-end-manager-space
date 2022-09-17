@@ -1,6 +1,6 @@
 <body>
 
-    <mat-card class ="form-container">
+    <mat-card>
     
         <mat-card-content >
       
@@ -28,19 +28,30 @@
             
          </mat-form-field> 
 
-       
-
-     
-
          <mat-form-field appearance="outline">
         
             <mat-label>Email</mat-label>
       
             <input matInput placeholder="Email" formControlName="email" >
         
-            
          </mat-form-field> 
 
+         
+        <mat-form-field appearance="outline">
+      
+         <mat-label>Password</mat-label>
+   
+         <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" >
+     
+         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+
+           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+         </button>
+   
+
+      </mat-form-field> 
+     
          <mat-form-field appearance="outline">
         
             <mat-label>Phone</mat-label>
@@ -60,15 +71,11 @@
          </mat-form-field> 
 
          <input type="file"  name="file" (change)="getFile($event)"/>
-        
-        <div class="center margin-top">
+
         
         <button mat-raised-button color="primary" type="submit" >Edit</button>
         
-        </div>
 
-      
-        
         </form>
         
         </mat-card-content>

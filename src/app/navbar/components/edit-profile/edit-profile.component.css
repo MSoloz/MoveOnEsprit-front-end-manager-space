@@ -1,44 +1,37 @@
-.form-container{
-
+mat-card{
 
     display: flex;
  
     flex-direction: column;
- 
- 
+
     margin-left: 300px;
  
-    margin-top: 25px;
+    margin-top: 5px;
  
     margin-right: 300px;
  
  
  }
- 
- 
- .okk{
- 
- 
-     display: flex;
- 
-     flex-direction: column;
- 
+
+form {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+ mat-card button{
+
+   margin-top: 20px;
+
+   width: 100px;
 
  }
 
- .l1{
+
+ 
 
 
-    display: flex;
-
-    flex-direction:row;
-
- }
-
-
- .margin-top{
-
-
-    margin-top: 20px;
-
- }
+ 

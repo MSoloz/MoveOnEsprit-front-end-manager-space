@@ -12,7 +12,7 @@ export class UniversityService {
 
   constructor(private http:HttpClient) { }
 
-  getUniversities() { 
+  getAllUniversities() { 
 
     return this.http.get(`${this.apiServerUrl}/university/all`);
   
@@ -44,7 +44,7 @@ export class UniversityService {
  }    
 
 
- deleteUniversity(id:any){
+ deleteUniversityById(id:any){
 
 
   return this.http.delete(`${this.apiServerUrl}/university/delete/`+id);

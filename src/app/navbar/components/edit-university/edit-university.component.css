@@ -1,10 +1,8 @@
-.form-container{
-
+mat-card{
 
     display: flex;
  
     flex-direction: column;
- 
  
     margin-left: 300px;
  
@@ -16,29 +14,18 @@
  }
  
  
- .okk{
- 
+ form{
  
      display: flex;
  
      flex-direction: column;
- 
 
  }
 
- .l1{
+ mat-card button{
 
+   margin-top: 20px;
 
-    display: flex;
-
-    flex-direction:row;
-
- }
-
- .margin-top{  
-
-
-    margin-top: 20px;
-
+   width: 100px;
 
  }

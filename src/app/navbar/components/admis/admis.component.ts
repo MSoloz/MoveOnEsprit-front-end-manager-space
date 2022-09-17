@@ -14,12 +14,11 @@ export class AdmisComponent implements OnInit {
   
   page : number = 1;
 
-  constructor(private route:ActivatedRoute, private candidatService: CandidateService) { }
+  constructor(private candidatService: CandidateService) { }
 
   ngOnInit(): void {
 
-
-    this.candidatService.getAdmis().subscribe(res => { this.admis = res ; });
+    this.candidatService.getAllAdmis().subscribe( res => this.admis = res );
 
 
   }

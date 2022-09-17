@@ -21,10 +21,9 @@ export class UniversityDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-
     this.route.paramMap.subscribe(params => {  this.id = params.get('id'); });
 
-     this.universityService.getUniversityById(this.id).subscribe( res => { this.university = res ; });
+     this.universityService.getUniversityById(this.id).subscribe( res =>  this.university = res );
 
 
   }

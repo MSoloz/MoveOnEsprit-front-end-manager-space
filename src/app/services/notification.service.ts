@@ -15,7 +15,7 @@ export class NotificationService {
 
   constructor(private http:HttpClient){ }
 
-  createNotification(data:any){
+  createNotification(data:any):Observable<any>{
 
     return this.http.post(`${this.apiServerUrl}/notification/create`, data);
 
